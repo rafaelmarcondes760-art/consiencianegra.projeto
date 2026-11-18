@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia da Consciência Negra - 20 de Novembro</title>
+    
+    <!-- Fontes Google Fonts: Cinzel (Títulos com peso histórico) e Plus Jakarta Sans (Leitura moderna) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           VARIÁVEIS E IDENTIDADE VISUAL
+           ========================================= */
+        :root {
+            --bg-dark: #120D0A;
+            --bg-card: #1E1611;
+            --bg-section: #17110D;
+            --gold: #E5A93B;
+            --gold-hover: #F5C056;
+            --terracotta: #C84B31;
+            --ochre: #D97724;
+            --text-light: #F7F3EE;
+            --text-muted: #C4B8AE;
+            --border-subtle: rgba(229, 169, 59, 0.25);
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* =========================================
+           RESET E ESTILOS GERAIS
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Padrão Geométrico Africano (Inspirado em tecidos Kente e Bogolan) */
+        .african-pattern-bar {
+            height: 10px;
+            width: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--gold) 0px,
+                var(--gold) 25px,
+                var(--terracotta) 25px,
+                var(--terracotta) 50px,
+                var(--bg-dark) 50px,
+                var(--bg-dark) 60px,
+                var(--ochre) 60px,
+                var(--ochre) 85px
+            );
+        }
+
+        /* =========================================
+           NAVEGAÇÃO SUPERIOR
+           ========================================= */
+        header {
+            background-color: rgba(18, 13, 10, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .logo span {
+            background-color: var(--terracotta);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.45rem 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            color: var(--gold);
+            background: rgba(229, 169, 59, 0.1);
+            border-color: var(--border-subtle);
+        }
+
+        /* =========================================
+           GERENCIAMENTO DE PÁGINAS E ANIMAÇÕES
+           ========================================= */
+        .page-view {
+            display: none;
+            animation: fadeInPage 0.5s ease forwards;
+        }
+
+        .page-view.active {
+            display: block;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* =========================================
+           PÁGINA INICIAL - HERO & INTRODUÇÃO
+           ========================================= */
+        .hero {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            background: radial-gradient(circle at top right, rgba(200, 75, 49, 0.15), transparent 50%),
+                        radial-gradient(circle at bottom left, rgba(229, 169, 59, 0.1), transparent 50%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background-color: var(--terracotta);
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(200, 75, 49, 0.3);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.15;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .hero-image-box {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-image-box img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image-box:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-caption {
+            background: linear-gradient(transparent, rgba(18, 13, 10, 0.95));
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.2rem 1rem;
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* =========================================
+           GRADE DOS 5 CARTÕES (PÁGINA INICIAL)
+           ========================================= */
+        .peoples-section {
+            padding: 4.5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .people-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .people-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 18px 35px rgba(229, 169, 59, 0.15);
+        }
+
+        .card-img-wrapper {
+            height: 210px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .people-card:hover .card-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(18, 13, 10, 0.85);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--gold);
+        }
+
+        .card-content {
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .btn-saiba-mais {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            border: none;
+            padding: 0.85rem 1.4rem;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .btn-saiba-mais:hover {
+            background-color: var(--gold-hover);
+            transform: scale(1.02);
+        }
+
+        /* =========================================
+           PÁGINAS INDIVIDUAIS (DETALHES DOS POVOS)
+           ========================================= */
+        .detail-hero {
+            position: relative;
+            padding: 4rem 0 3rem;
+            background-color: var(--bg-section);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .btn-voltar {
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .btn-voltar:hover {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        .detail-header-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .detail-subtitle {
+            color: var(--ochre);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .detail-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: var(--gold);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .detail-lead {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+
+        .detail-banner-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--border-subtle);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+        }
+
+        .detail-body {
+            padding: 3.5rem 0 5rem;
+        }
+
+        .info-blocks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-block {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid var(--gold);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .info-block.alert-block {
+            border-left-color: var(--terracotta);
+        }
+
+        .info-block.resistance-block {
+            border-left-color: var(--ochre);
+            grid-column: 1 / -1;
+        }
+
+        .info-block h3 {
+            font-family: var(--font-display);
+            color: var(--gold);
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .info-block.alert-block h3 {
+            color: #E86A50;
+        }
+
+        .info-block p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .info-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bottom-nav-box {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* =========================================
+           RODAPÉ
+           ========================================= */
+        footer {
+            background-color: #0B0806;
+            border-top: 1px solid var(--border-subtle);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--gold);
+        }
+
+        /* =========================================
+           RESPONSIVIDADE
+           ========================================= */
+        @media (max-width: 900px) {
+            .hero-grid, .detail-header-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-image-box img {
+                height: 320px;
+            }
+            .info-blocks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Faixa decorativa inspirada em padrões africanos -->
+    <div class="african-pattern-bar"></div>
+
+    <!-- Cabeçalho e Menu de Navegação -->
+    <header>
+        <div class="nav-container">
+            <a class="logo" onclick="navigateTo('home')">
+                CONSCIÊNCIA NEGRA <span>20 NOV</span>
+            </a>
+            <nav class="nav-links" id="main-nav">
+                <button class="nav-btn active" data-target="home" onclick="navigateTo('home')">Início</button>
+                <button class="nav-btn" data-target="africanos" onclick="navigateTo('africanos')">Povos Africanos</button>
+                <button class="nav-btn" data-target="indigenas" onclick="navigateTo('indigenas')">Povos Indígenas</button>
+                <button class="nav-btn" data-target="congoleses" onclick="navigateTo('congoleses')">Povos Congoleses</button>
+                <button class="nav-btn" data-target="angolanos" onclick="navigateTo('angolanos')">Povos Angolanos</button>
+                <button class="nav-btn" data-target="mocambicanos" onclick="navigateTo('mocambicanos')">Povos Moçambicanos</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         PÁGINA 1: PÁGINA INICIAL
+         ===================================================================== -->
+    <main id="page-home" class="page-view active">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <span class="date-badge">20 de Novembro • Memória, Resistência e Luta</span>
+                    <h1>Dia da Consciência Negra</h1>
+                    <p>
+                        O <strong>Dia Nacional de Zumbi e da Consciência Negra</strong>, celebrado em 20 de novembro, é um marco fundamental de reflexão, memória histórica e mobilização social no Brasil. A data faz referência ao dia da morte de <strong>Zumbi dos Palmares</strong>, em 1695, uma das maiores lideranças do Quilombo dos Palmares e símbolo máximo da resistência negra contra o sistema escravista colonial.
+                    </p>
+                    <p>
+                        Instituída oficialmente pela Lei nº 12.519/2011 e tornada feriado nacional pela Lei nº 14.759/2023, a data vai muito além de uma efeméride no calendário: ela convida a sociedade brasileira a reconhecer as profundas marcas deixadas por mais de três séculos de escravidão e a combater o racismo estrutural que ainda persiste no país.
+                    </p>
+                    <p>
+                        É também um momento de celebrar e valorizar a imensa contribuição dos povos africanos e afrodescendentes na formação da identidade, da língua, da música, da religiosidade, da ciência e da cultura do Brasil.
+                    </p>
+                </div>
+                <div class="hero-image-box">
+                    <img src="https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?auto=format&fit=crop&w=900&q=80" alt="Representação da cultura, ancestralidade e força negra">
+                    <div class="image-caption">
+                        Ancestralidade, identidade e resistência: a herança viva dos povos que construíram o Brasil.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="peoples-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Raízes, Povos e Resistência</h2>
+                    <p>
+                        A história do Brasil foi forjada pelo encontro forçado, pela dor, mas sobretudo pela resistência e riqueza cultural de diversos povos. Explore os cinco eixos abaixo para compreender suas histórias, culturas e legados.
+                    </p>
+                </div>
+
+                <!-- Grade com os 5 Cartões -->
+                <div class="cards-grid">
+                    
+                    <!-- Cartão 1: Povos Africanos -->
+                    <article class="people-card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">Continente Africano</span>
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80" alt="Paisagem e cultura africana">
+                        </div>
+                        <div class="card-content">
+                            <h3>Povos Africanos</h3>
+                            <p>
+                                Um continente vasto e plural, berço da humanidade, composto por milhares de etnias, idiomas, reinos complexos e tradições espirituais que foram brutalmente atingidos pelo tráfico transatlântico.
+                            </p>
+                            <button class="btn-saiba-mais" onclick="navigateTo('africanos')">
+                                Saiba mais &rarr;
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Cartão 2: Povos Indígenas -->
+                    <article class="people-card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">Povos Originários</span>
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Floresta e ancestralidade indígena no Brasil">
+                        </div>
+                        <div class="card-content">
+                            <h3>Povos Indígenas</h3>
+                            <p>
+                                Habitantes originários do território brasileiro, detentores de saberes ancestrais e línguas diversas, que enfrentaram a invasão colonial, a escravização e lutam até hoje pela demarcação de suas terras.
+                            </p>
+                            <button class="btn-saiba-mais" onclick="navigateTo('indigenas')">
+                                Saiba mais &rarr;
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Cartão 3: Povos Congoleses -->
+                    <article class="people-card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">África Central</span>
+                            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80" alt="Região do Rio Congo">
+                        </div>
+                        <div class="card-content">
+                            <h3>Povos Congoleses</h3>
+                            <p>
+                                Protagonistas do sofisticado Reino do Congo, com avançada metalurgia e organização política, que sofreram intensa desestruturação com o comércio atlântico e deixaram marcas profundas no Brasil.
+                            </p>
+                            <button class="btn-saiba-mais" onclick="navigateTo('congoleses')">
+                                Saiba mais &rarr;
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Cartão 4: Povos Angolanos -->
+                    <article class="people-card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">África Centro-Ocidental</span>
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80" alt="Cultura e território angolano">
+                        </div>
+                        <div class="card-content">
+                            <h3>Povos Angolanos</h3>
+                            <p>
+                                Formados por grupos como os Ambundos, Ovimbundos e Bakongos, constituíram o maior contingente de africanos trazidos à força para o Brasil, influenciando diretamente o português brasileiro e o samba.
+                            </p>
+                            <button class="btn-saiba-mais" onclick="navigateTo('angolanos')">
+                                Saiba mais &rarr;
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Cartão 5: Povos Moçambicanos -->
+                    <article class="people-card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">África Oriental</span>
+                            <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=80" alt="Costa e cultura de Moçambique">
+                        </div>
+                        <div class="card-content">
+                            <h3>Povos Moçambicanos</h3>
+                            <p>
+                                Povos como os Macuas, Tsongas e Senas, localizados na costa do Índico, que enfrentaram travessias marítimas ainda mais longas e severas rumo às Américas no século XIX.
+                            </p>
+                            <button class="btn-saiba-mais" onclick="navigateTo('mocambicanos')">
+                                Saiba mais &rarr;
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================================
+         PÁGINA 2: POVOS AFRICANOS
+         ===================================================================== -->
+    <section id="page-africanos" class="page-view">
+        <div class="detail-hero">
+            <div class="container">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <div class="detail-header-grid">
+                    <div>
+                        <span class="detail-subtitle">Diversidade Continental</span>
+                        <h2 class="detail-title">Povos Africanos</h2>
+                        <p class="detail-lead">
+                            A África não é um país, mas um continente imenso com 54 nações atuais e milhares de grupos étnicos, linguísticos e culturais que moldaram a história mundial.
+                        </p>
+                    </div>
+                    <img class="detail-banner-img" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=900&q=80" alt="Savana africana">
+                </div>
+            </div>
+        </div>
+
+        <div class="container detail-body">
+            <div class="info-blocks-grid">
+                <div class="info-block">
+                    <h3>Resumo Histórico</h3>
+                    <p>
+                        Antes da chegada dos colonizadores europeus, o continente africano abrigava impérios e reinos altamente organizados, como os Impérios do Mali, Gana, Songhai, Benin, Iorubá e o Grande Zimbábue. Esses estados possuíam rotas comerciais transaarianas, centros universitários (como em Tombuctu), sistemas jurídicos próprios e domínio avançado da metalurgia e agricultura.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Cultura, Costumes e Idiomas</h3>
+                    <p>
+                        Estima-se que mais de 2.000 idiomas sejam falados na África, pertencentes a grandes troncos linguísticos como o Níger-Congo (que inclui as línguas bantas e o iorubá), o Afro-asiático e o Nilo-saariano. A espiritualidade tradicional valoriza a conexão com a natureza e a ancestralidade, onde os mais velhos — e os <em>griots</em> (contadores de histórias) — são guardiões da memória coletiva.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>O Tráfico Transatlântico e a Escravização</h3>
+                    <p>
+                        Entre os séculos XVI e XIX, cerca de 12,5 milhões de africanos foram sequestrados e embarcados à força nos chamados navios negreiros (tumbeiros) rumo às Américas. O Brasil foi o destino de quase 5 milhões dessas pessoas — o maior número de todo o continente americano. Os europeus exploraram rivalidades locais e financiaram guerras para capturar prisioneiros, transformando seres humanos em mercadoria.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>Consequências Históricas</h3>
+                    <p>
+                        O tráfico provocou um colapso demográfico, econômico e social em diversas regiões africanas, retirando milhões de jovens em idade produtiva e reprodutiva. Posteriormente, no século XIX, a Partilha da África pelas potências europeias dividiu o continente de forma arbitrária, ignorando fronteiras étnicas e gerando conflitos que perduram até a contemporaneidade.
+                    </p>
+                </div>
+
+                <div class="info-block resistance-block">
+                    <h3>Resistência e Preservação Cultural</h3>
+                    <p>
+                        Mesmo diante da brutalidade da escravidão e da tentativa de apagamento de suas identidades, os povos africanos reconstituíram laços comunitários no Brasil. Preservaram suas matrizes religiosas (dando origem ao Candomblé, à Umbanda e ao Tambor de Mina), mantiveram técnicas agrícolas e de mineração, criaram irmandades negras para comprar alforrias e organizaram quilombos e revoltas urbanas, como a Revolta dos Malês (1835) na Bahia.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bottom-nav-box">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <button class="btn-saiba-mais" style="width: auto;" onclick="navigateTo('indigenas')">Próximo: Povos Indígenas &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         PÁGINA 3: POVOS INDÍGENAS
+         ===================================================================== -->
+    <section id="page-indigenas" class="page-view">
+        <div class="detail-hero">
+            <div class="container">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <div class="detail-header-grid">
+                    <div>
+                        <span class="detail-subtitle">Povos Originários do Brasil</span>
+                        <h2 class="detail-title">Povos Indígenas</h2>
+                        <p class="detail-lead">
+                            Antes de 1500, milhões de indígenas de centenas de etnias habitavam o território hoje chamado Brasil, vivendo em harmonia e manejo sustentável com os biomas.
+                        </p>
+                    </div>
+                    <img class="detail-banner-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80" alt="Floresta Amazônica e ancestralidade">
+                </div>
+            </div>
+        </div>
+
+        <div class="container detail-body">
+            <div class="info-blocks-grid">
+                <div class="info-block">
+                    <h3>Resumo Histórico</h3>
+                    <p>
+                        Quando os portugueses aportaram em 1500, encontraram uma população estimada entre 3 e 5 milhões de pessoas divididas em mais de mil povos distintos. Longe de serem um grupo único, possuíam complexas redes de comércio, alianças políticas e formas variadas de ocupação territorial, desde o litoral até o interior da Amazônia e do Cerrado.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Cultura, Costumes e Idiomas</h3>
+                    <p>
+                        Os povos originários dividem-se em grandes troncos linguísticos, como o <strong>Tupi</strong> e o <strong>Macro-Jê</strong>, além de famílias como Aruak e Karib. Suas organizações sociais baseiam-se na coletividade, na divisão de tarefas por gênero e idade, na transmissão oral do conhecimento pelos anciãos e pajés, e numa cosmovisão em que a terra é sagrada e não propriedade privada.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>Colonização e Escravização</h3>
+                    <p>
+                        Os indígenas foram os primeiros povos escravizados pelos portugueses no Brasil, utilizados inicialmente na extração do pau-brasil e nas primeiras lavouras de cana-de-açúcar. Por meio das chamadas "Guerras Justas" — expedições militares autorizadas pela Coroa contra povos que recusavam a submissão ou a catequese —, milhares foram capturados, acorrentados e vendidos como escravos.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>Consequências Históricas</h3>
+                    <p>
+                        O contato colonial causou um verdadeiro genocídio: epidemias de varíola, sarampo e gripe (doenças trazidas pelos europeus para as quais os nativos não tinham imunidade), somadas aos massacres e ao trabalho forçado, dizimaram cerca de 90% da população indígena nos primeiros séculos. Além disso, sofreram o roubo sistemático de seus territórios ancestrais.
+                    </p>
+                </div>
+
+                <div class="info-block resistance-block">
+                    <h3>Resistência e Preservação Cultural</h3>
+                    <p>
+                        A resistência indígena ocorreu desde o primeiro dia, com confederações guerreiras (como a Confederação dos Tamoios), fugas para o interior e alianças com negros fugidos nos quilombos. Hoje, existem mais de 300 povos indígenas no Brasil falando cerca de 274 línguas. Eles seguem na linha de frente na defesa das florestas, da biodiversidade e dos direitos constitucionais pela demarcação de suas terras.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bottom-nav-box">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <button class="btn-saiba-mais" style="width: auto;" onclick="navigateTo('congoleses')">Próximo: Povos Congoleses &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         PÁGINA 4: POVOS CONGOLESES
+         ===================================================================== -->
+    <section id="page-congoleses" class="page-view">
+        <div class="detail-hero">
+            <div class="container">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <div class="detail-header-grid">
+                    <div>
+                        <span class="detail-subtitle">África Central • Bacia do Rio Congo</span>
+                        <h2 class="detail-title">Povos Congoleses</h2>
+                        <p class="detail-lead">
+                            Sede de um dos estados mais poderosos da África Central, o Reino do Congo estabeleceu relações diplomáticas com a Europa antes de ser devastado pelo tráfico escravista.
+                        </p>
+                    </div>
+                    <img class="detail-banner-img" src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80" alt="Paisagem da África Central">
+                </div>
+            </div>
+        </div>
+
+        <div class="container detail-body">
+            <div class="info-blocks-grid">
+                <div class="info-block">
+                    <h3>Resumo Histórico</h3>
+                    <p>
+                        Fundado por volta do século XIV na bacia do Rio Congo (abrangendo partes dos atuais Angola, República Democrática do Congo e República do Congo), o <strong>Reino do Congo</strong> era governado pelo <em>Manicongo</em>, a partir da capital Mbanza Congo. Possuía um sistema administrativo centralizado, cobrança de impostos, moeda própria (os búzios <em>nzimbu</em>) e exército estruturado.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Cultura, Costumes e Idiomas</h3>
+                    <p>
+                        Majoritariamente de etnia <strong>Bakongo</strong> e falantes do idioma <strong>Kikongo</strong> (do tronco linguístico Banto), os povos congoleses destacavam-se na tecelagem da ráfia, na escultura em madeira e marfim e na metalurgia do ferro e cobre. Sua cosmologia baseava-se no <em>Dikenga</em> (o cosmograma Congo), que simboliza o ciclo contínuo da vida, da morte e da ancestralidade.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>Escravização e Colonização Europeia</h3>
+                    <p>
+                        No final do século XV, os portugueses chegaram ao Congo estabelecendo inicialmente acordos comerciais e diplomáticos. Contudo, a crescente demanda por mão de obra nas lavouras de açúcar do Brasil transformou a relação: Portugal passou a exigir cada vez mais pessoas escravizadas, incentivando guerras internas e traficando súditos do próprio reino. Mais tarde, no século XIX, a região sofreu a brutal colonização belga e francesa.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>Consequências Históricas</h3>
+                    <p>
+                        O tráfico atlântico enfraqueceu a autoridade do Manicongo, gerou guerras civis prolongadas e fragmentou o reino no século XVII. Milhares de congoleses foram embarcados pelos portos de Mpinda e Cabinda rumo ao Rio de Janeiro, Bahia e Pernambuco, separando famílias e destruindo estruturas sociais milenares.
+                    </p>
+                </div>
+
+                <div class="info-block resistance-block">
+                    <h3>Resistência e Legado no Brasil</h3>
+                    <p>
+                        No Brasil, os povos congoleses recriaram suas tradições através das <strong>Congadas</strong> e dos <strong>Reisados</strong> — manifestações culturais e religiosas que celebram a coroação dos Reis do Congo, unindo dança, música e memória política. No Rio de Janeiro e em Minas Gerais, o <em>Jongo</em> e o <em>Caxambu</em> preservam diretamente o ritmo, a dança em roda e o vocabulário Kikongo até os dias atuais.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bottom-nav-box">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <button class="btn-saiba-mais" style="width: auto;" onclick="navigateTo('angolanos')">Próximo: Povos Angolanos &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         PÁGINA 5: POVOS ANGOLANOS
+         ===================================================================== -->
+    <section id="page-angolanos" class="page-view">
+        <div class="detail-hero">
+            <div class="container">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <div class="detail-header-grid">
+                    <div>
+                        <span class="detail-subtitle">África Centro-Ocidental</span>
+                        <h2 class="detail-title">Povos Angolanos</h2>
+                        <p class="detail-lead">
+                            A região de Angola foi o principal ponto de embarque de africanos escravizados para o Brasil, deixando uma marca indelével na língua, na música e na alma brasileira.
+                        </p>
+                    </div>
+                    <img class="detail-banner-img" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80" alt="Tradição e cultura angolana">
+                </div>
+            </div>
+        </div>
+
+        <div class="container detail-body">
+            <div class="info-blocks-grid">
+                <div class="info-block">
+                    <h3>Resumo Histórico</h3>
+                    <p>
+                        O território da atual Angola abrigava diversos estados soberanos, com destaque para o <strong>Reino do Ndongo</strong> (governado pelo <em>Ngola</em>, título que deu origem ao nome do país) e o Reino de Matamba. A região foi palco de intensos conflitos contra a ocupação militar portuguesa fundada em Luanda em 1575.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Diversidade Étnica, Costumes e Idiomas</h3>
+                    <p>
+                        Angola é marcada pela pluralidade de povos bantos, entre eles os <strong>Ambundos</strong> (falantes de <em>Kimbundu</em>, na região de Luanda e Ndongo), os <strong>Ovimbundos</strong> (falantes de <em>Umbundu</em>, no planalto central) e os <strong>Bakongos</strong> (ao norte). Suas tradições valorizam a música percussiva, as danças em roda (como a <em>semba</em>), a culinária à base de dendê e mandioca e o culto aos ancestrais.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>O Epicentro do Tráfico para o Brasil</h3>
+                    <p>
+                        Os portos de <strong>Luanda</strong> e <strong>Benguela</strong> tornaram-se os maiores centros exportadores de pessoas escravizadas de toda a história do tráfico atlântico. Estima-se que cerca de 70% dos africanos trazidos à força para o Brasil tenham partido da região Congo-Angola, abastecendo os engenhos do Nordeste, as minas de ouro de Minas Gerais e as fazendas de café do Sudeste.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>Consequências Históricas</h3>
+                    <p>
+                        Durante séculos, o interior de Angola foi sistematicamente invadido por expedições militares portuguesas e intermediários (pombeiros) para capturar prisioneiros de guerra. Isso provocou o despovoamento de áreas inteiras, a destruição de reinos locais e uma longa dominação colonial que só terminou em 1975, após uma sangrenta guerra de independência.
+                    </p>
+                </div>
+
+                <div class="info-block resistance-block">
+                    <h3>Resistência e Influência no Brasil</h3>
+                    <p>
+                        Na história angolana, brilha a figura da <strong>Rainha Nzinga Mbandi</strong>, líder do Ndongo e de Matamba que resistiu militar e diplomaticamente aos portugueses por quase 40 anos no século XVII. No Brasil, o próprio <strong>Quilombo dos Palmares</strong> (chamado de <em>Angola Janga</em>, "Pequena Angola") foi estruturado segundo modelos políticos centro-africanos. Além disso, a <strong>Capoeira Angola</strong>, o <strong>Samba</strong> (derivado da <em>semba</em>) e centenas de palavras do português (como <em>cafuné, moleque, quitanda, fubá</em> e <em>caçula</em>) vêm diretamente do Kimbundu e do Umbundu.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bottom-nav-box">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <button class="btn-saiba-mais" style="width: auto;" onclick="navigateTo('mocambicanos')">Próximo: Povos Moçambicanos &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         PÁGINA 6: POVOS MOÇAMBICANOS
+         ===================================================================== -->
+    <section id="page-mocambicanos" class="page-view">
+        <div class="detail-hero">
+            <div class="container">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <div class="detail-header-grid">
+                    <div>
+                        <span class="detail-subtitle">África Oriental • Costa do Oceano Índico</span>
+                        <h2 class="detail-title">Povos Moçambicanos</h2>
+                        <p class="detail-lead">
+                            Localizados na costa oriental da África, os povos de Moçambique enfrentaram as travessias marítimas mais longas e mortais rumo ao Brasil, especialmente no século XIX.
+                        </p>
+                    </div>
+                    <img class="detail-banner-img" src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=80" alt="Costa de Moçambique">
+                </div>
+            </div>
+        </div>
+
+        <div class="container detail-body">
+            <div class="info-blocks-grid">
+                <div class="info-block">
+                    <h3>Resumo Histórico</h3>
+                    <p>
+                        Banhado pelo Oceano Índico, o território moçambicano integrou durante séculos redes comerciais marítimas com povos árabes, persas e asiáticos, além de abrigar partes do poderoso <strong>Império Monomotapa</strong>, rico em ouro e marfim. A partir do século XVI, os portugueses estabeleceram feitorias na Ilha de Moçambique, Quelimane e Inhambane.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Diversidade Étnica, Costumes e Idiomas</h3>
+                    <p>
+                        Moçambique reúne uma rica diversidade de povos bantos, destacando-se os <strong>Macuas</strong> (o maior grupo étnico, situado ao norte, conhecido por sua organização matrilinear), os <strong>Tsongas</strong> (ao sul, ligados ao antigo Império de Gaza) e os <strong>Senas</strong> (no vale do rio Zambeze). Possuem tradições musicais únicas, como o <em>Timbila</em> (xilofone tradicional dos povos Chopi, patrimônio da humanidade) e o <em>Tufo</em>.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>A Rota do Índico ao Atlântico</h3>
+                    <p>
+                        Com as restrições britânicas ao tráfico na África Ocidental no início do século XIX, os traficantes de escravos intensificaram a captura na África Oriental. Milhares de moçambicanos foram embarcados na Ilha de Moçambique e em Quelimane, tendo que contornar o perigoso Cabo da Boa Esperança (extremo sul da África) para chegar ao Rio de Janeiro e à Bahia.
+                    </p>
+                </div>
+
+                <div class="info-block alert-block">
+                    <h3>Consequências Históricas</h3>
+                    <p>
+                        A viagem entre Moçambique e o Brasil durava até três meses — quase o triplo do tempo das rotas vindas de Angola —, resultando em taxas altíssimas de mortalidade por doenças, fome e desidratação nos porões dos navios. Em Moçambique, a exploração colonial continuou através do sistema de prazos e do trabalho forçado (<em>chibalo</em>) até a independência em 1975.
+                    </p>
+                </div>
+
+                <div class="info-block resistance-block">
+                    <h3>Resistência e Preservação Cultural</h3>
+                    <p>
+                        Em solo moçambicano, líderes como <strong>Ngungunhane</strong> (imperador de Gaza) lideraram ferozes resistências contra o domínio colonial português no final do século XIX. No Brasil, os africanos conhecidos genericamente como "moçambiques" uniram-se a outros grupos bantos no Sudeste, dando nome e alma ao <strong>Moçambique</strong> — uma das mais tradicionais danças dramáticas e cortejos religiosos do folclore brasileiro, presente em Minas Gerais, São Paulo e Goiás.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bottom-nav-box">
+                <button class="btn-voltar" onclick="navigateTo('home')">&larr; Voltar à Página Inicial</button>
+                <button class="btn-saiba-mais" style="width: auto;" onclick="navigateTo('africanos')">Voltar ao Primeiro Povo: Povos Africanos &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p><strong>20 de Novembro — Dia Nacional de Zumbi e da Consciência Negra</strong></p>
+            <p style="margin-top: 0.4rem;">Projeto Educativo sobre História, Memória, Diversidade e Resistência Afro-Brasileira e Indígena.</p>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         JAVASCRIPT PARA NAVEGAÇÃO INTERATIVA ENTRE PÁGINAS
+         ===================================================================== -->
+    <script>
+        function navigateTo(pageId) {
+            // 1. Oculta todas as páginas
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // 2. Exibe a página selecionada
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // 3. Atualiza o estado ativo nos botões do menu de navegação
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                if (btn.getAttribute('data-target') === pageId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // 4. Rola suavemente para o topo da página
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
+
